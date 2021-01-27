@@ -1,3 +1,4 @@
+```PowerShell
 function Get-AZResourceGroupsWithNoResources 
 {
   process 
@@ -11,3 +12,4 @@ function Get-AZResourceGroupsWithNoResources
         return $emptyResourceGroups
     }
 }
+```
