@@ -3,9 +3,9 @@ function Get-AZResourceGroupsWithNoResources
 {
   process 
   {
-        $allResourceGroups = Get-AZResourceGroup | ForEach-Object { $_.ResourceGroupName }
+        $allResourceGroups = Get-AzResourceGroup | Select-Object ResourceGroupName
 
-        $resourceGroupsWithResources = Get-AzResource | Group-Object ResourceGroupName | ForEach-Object { $_.Name }
+        $resourceGroupsWithResources = Get-AzResource | Group-Object ResourceGroupName | Select-Object Name
 
         $emptyResourceGroups = $allResourceGroups | Where-Object { $_ -NotIn $resourceGroupsWithResources } 
 
